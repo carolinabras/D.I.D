@@ -7,7 +7,7 @@ public class AlterIGNORE : MonoBehaviour
 
     public string proficiency; // the proficiency that this alter has (example: "dog" , proficiency: "animal task")
 
-    public void selected; // if the alter is selected or not
+    public bool selected; // if the alter is selected or not
 
 
   
