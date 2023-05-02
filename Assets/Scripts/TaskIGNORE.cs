@@ -7,7 +7,8 @@ public class TaskIGNORE : MonoBehaviour
 
     public string taskDescription;
     public int taskID;
-    public bool isCompleted;
+   
+   public bool isCompleted; // if the task is completed or not
 
     public string proficiency; // the proficiency that this task is associated with
     
