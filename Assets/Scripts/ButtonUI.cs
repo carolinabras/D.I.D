@@ -26,10 +26,8 @@ public class ButtonUI : MonoBehaviour
         blackScreen.transform.SetAsLastSibling ();
         Color color = blackScreen.GetComponent<Image>().color;
         float fadeAmount = color.a;
-        //Debug.Log(fadeAmount);
 
         while (fadeAmount < 1) {
-            Debug.Log(fadeAmount);
             fadeAmount += fadeSpeed * Time.deltaTime;
 
             Color newColor = new Color(color.r, color.g, color.b, fadeAmount);
