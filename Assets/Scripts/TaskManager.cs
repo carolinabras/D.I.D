@@ -10,6 +10,11 @@ public class TaskManager : MonoBehaviour
     private TMPro.TMP_Text taskText;
 
     public Task currentTask;
+
+    public AudioSource audioSource;
+    public void playSoundEffect() {
+        audioSource.Play();
+    }
      public void Start()
     {
 
@@ -45,6 +50,7 @@ public class TaskManager : MonoBehaviour
     }
 
     public void SelectDogButton(){
+        playSoundEffect();
 
         if (currentTask.proficiency == "animal"){
             Debug.Log("dog");
@@ -60,6 +66,7 @@ public class TaskManager : MonoBehaviour
     }
 
     public void SelectChildButton(){
+        playSoundEffect();
         if (currentTask.proficiency == "criative"){
             ScoreManager.Instance.AddPoints(20);
             currentTask.isCompleted = true;
@@ -74,6 +81,7 @@ public class TaskManager : MonoBehaviour
     }
 
     public void SelectElderButton(){
+        playSoundEffect();
         if (currentTask.proficiency == "calm"){
             ScoreManager.Instance.AddPoints(20);
             currentTask.isCompleted = true;
@@ -88,6 +96,7 @@ public class TaskManager : MonoBehaviour
     }
 
     public void SelectMaskButton(){
+        playSoundEffect();
         if (currentTask.proficiency == "energy"){
             ScoreManager.Instance.AddPoints(20);
             currentTask.isCompleted = true;
