@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class ShoterGame : MonoBehaviour
 {
-    public float currentTime;
-    public float startingTime = 10f;
+    static public ShoterGame Instance;
 
-    [SerializeField] TextMeshProUGUI countdownText;
-    void Start()
+    public int targetCount;
+    private int deadCount = 0;
+
+    public Texture2D cursorTexture;
+
+    private void Awake()
     {
-        currentTime = startingTime;
+        Instance = this;
+        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
     }
 
     public void LoadNextScene()
@@ -24,14 +26,12 @@ public class Timer : MonoBehaviour
         SceneManager.LoadScene(nextSceneIndex);
 
     }
-    void Update()
-    {
-        currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("F1");
 
-        if (currentTime <= 0)
+    public void KillChange(int points)
+    {
+        deadCount = deadCount + points;
+        if (deadCount == targetCount)
         {
-            currentTime = 0;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
             LoadNextScene();
             gameObject.SetActive(false);
