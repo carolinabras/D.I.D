@@ -11,19 +11,16 @@ public class Timer : MonoBehaviour
     public float startingTime = 10f;
 
     [SerializeField] TextMeshProUGUI countdownText;
+    public Task currentTask;
     void Start()
     {
         currentTime = startingTime;
+        GameObject LevelGameObject = GameObject.Find("LevelProperties");
+        LevelProperties levelProperties = LevelGameObject.GetComponent<LevelProperties>();
+        currentTask = levelProperties.getCurrentTask();
     }
 
-    public void LoadNextScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        SceneManager.LoadScene(nextSceneIndex);
-
-    }
+    
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
@@ -33,7 +30,11 @@ public class Timer : MonoBehaviour
         {
             currentTime = 0;
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            LoadNextScene();
+            if (!currentTask.isCompleted)
+            {
+                ScoreManager.Instance.AddPoints(-5);
+            }
+            SceneManager.LoadScene("Phase5_fail");
             gameObject.SetActive(false);
         }
     }
