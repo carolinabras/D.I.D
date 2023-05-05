@@ -12,20 +12,16 @@ public class EventScript : MonoBehaviour
     public int minigameChance = 40;
 
     public static event Action Minigame;
+    public Task currentTask;
     // Start is called before the first frame update
     void Start()
     {
+        GameObject LevelGameObject = GameObject.Find("LevelProperties");
+        LevelProperties levelProperties = LevelGameObject.GetComponent<LevelProperties>();
+        currentTask = levelProperties.getCurrentTask();
         minigameCoroutine = StartCoroutine(ActivateMinigame());
     }
 
-    public void LoadNextScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
-
-        SceneManager.LoadScene(nextSceneIndex);
-
-    }
 
     IEnumerator ActivateMinigame()
     {
@@ -40,6 +36,13 @@ public class EventScript : MonoBehaviour
                 StopCoroutine(minigameCoroutine);
             }
         }
-        LoadNextScene();
+        if (currentTask.isCompleted)
+        {
+            SceneManager.LoadScene("Phase4_sucess");
+        }
+        else
+        {
+            SceneManager.LoadScene("Phase5_fail");
+        }
     }
 }

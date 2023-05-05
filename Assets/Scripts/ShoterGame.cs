@@ -11,21 +11,18 @@ public class ShoterGame : MonoBehaviour
     private int deadCount = 0;
 
     public Texture2D cursorTexture;
+    public Task currentTask;
 
     private void Awake()
     {
         Instance = this;
         Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
+        GameObject LevelGameObject = GameObject.Find("LevelProperties");
+        LevelProperties levelProperties = LevelGameObject.GetComponent<LevelProperties>();
+        currentTask = levelProperties.getCurrentTask();
     }
 
-    public void LoadNextScene()
-    {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        int nextSceneIndex = currentSceneIndex + 1;
 
-        SceneManager.LoadScene(nextSceneIndex);
-
-    }
 
     public void KillChange(int points)
     {
@@ -33,7 +30,15 @@ public class ShoterGame : MonoBehaviour
         if (deadCount == targetCount)
         {
             Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-            LoadNextScene();
+            if (currentTask.isCompleted)
+            {
+                SceneManager.LoadScene("Phase4_sucess");
+            }
+            else
+            {
+                SceneManager.LoadScene("Phase5_fail");
+            }
+                
             gameObject.SetActive(false);
         }
     }

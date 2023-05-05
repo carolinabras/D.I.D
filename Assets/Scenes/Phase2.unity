@@ -577,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskText: {fileID: 1047597347}
+  audioSource: {fileID: 1471254801}
 --- !u!4 &545162083
 Transform:
   m_ObjectHideFlags: 0
