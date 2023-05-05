@@ -10,6 +10,7 @@ public class TaskyManager : MonoBehaviour
 
     LevelProperties levelProperties;
 
+    public GameObject letterBackground;
     public GameObject chooseTaskTitle;
     public GameObject taskButton;
     public GameObject canvas;
@@ -57,12 +58,16 @@ public class TaskyManager : MonoBehaviour
         Initiate();
         Task[] tasks = selectKTasks(4);
         
+        CreateLetterBackground();
         CreateTitle();
         for (int i = 0; i < 4; i++) {
             CreateTaskButton(i, tasks[i]);
         }
     }
 
+    public void CreateLetterBackground() {
+        letterBackground.SetActive(true);
+    }
     public void CreateTitle() {
         GameObject title = Instantiate(chooseTaskTitle);
         title.transform.SetParent(canvas.transform, false);
