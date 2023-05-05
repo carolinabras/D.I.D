@@ -8,6 +8,7 @@ public class TaskyManager : MonoBehaviour
     public List<Task> allTasks = new List<Task>();
     List<Task> availableTasks = new List<Task>();
 
+    public AudioSource audioSource;
     LevelProperties levelProperties;
 
     public GameObject letterBackground;
@@ -26,6 +27,10 @@ public class TaskyManager : MonoBehaviour
                 availableTasks.Add(task);
             }
         }
+    }
+
+    public void playSoundEffect() {
+        audioSource.Play();
     }
 
     Task[] selectKTasks(int k)
@@ -52,6 +57,8 @@ public class TaskyManager : MonoBehaviour
     public void OpenMessageButton() {
         GameObject.Find("Open Message Button").SetActive(false);
         ShowTasks();
+        playSoundEffect();
+
     }
 
     public void ShowTasks() {
