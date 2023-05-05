@@ -111,7 +111,7 @@ public class TaskyManager : MonoBehaviour
         });
         allTasks.Add(new Task{
             description = "Rust the electricity post",
-            proficiency = "calm",
+            proficiency = "animal",
             difficultyLevel = 1,
             isCompleted = false
         });
@@ -122,20 +122,68 @@ public class TaskyManager : MonoBehaviour
             isCompleted = false
         });
         allTasks.Add(new Task{
-            description = "Explode the building 1",
-            proficiency = "energy",
-            difficultyLevel = 1,
-            isCompleted = false
-        });
-        allTasks.Add(new Task{
-            description = "Complicate the universe 1",
+            description = "Deliver a message",
             proficiency = "criative",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
-            description = "Rust the electricity post 1",
+            description = "Impose power over the world",
+            proficiency = "energy",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Organize a \"cleansing\"",
             proficiency = "calm",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Plan an ambush for the rebelious young",
+            proficiency = "calm",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Retrieve the mysterious package",
+            proficiency = "animal",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Navigate the tight tunnels",
+            proficiency = "animal",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Spy on the younglings",
+            proficiency = "creative",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Disrupt the rebels",
+            proficiency = "energy",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Express your dreams",
+            proficiency = "creative",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Think",
+            proficiency = "calm",
+            difficultyLevel = 1,
+            isCompleted = false
+        });
+        allTasks.Add(new Task{
+            description = "Disrupt the government's power supply",
+            proficiency = "energy",
             difficultyLevel = 1,
             isCompleted = false
         });
