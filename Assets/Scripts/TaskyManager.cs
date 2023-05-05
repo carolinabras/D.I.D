@@ -87,40 +87,48 @@ public class TaskyManager : MonoBehaviour
         allTasks.Add(new Task{
             description = "Cry like a baby",
             difficultyLevel = 1,
+            proficiency = "criative",
             isCompleted = false
         });
         allTasks.Add(new Task{
             description = "Explode the building",
+            proficiency = "energy",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
-            description = "Complicate the universe",
+            description = "Smell drugs and investigate",
+            proficiency = "animal",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
             description = "Rust the electricity post",
+            proficiency = "calm",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
-            description = "Cry like a baby 1",
+            description = "Run complicated math equations",
+            proficiency = "calm",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
             description = "Explode the building 1",
+            proficiency = "energy",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
             description = "Complicate the universe 1",
+            proficiency = "criative",
             difficultyLevel = 1,
             isCompleted = false
         });
         allTasks.Add(new Task{
             description = "Rust the electricity post 1",
+            proficiency = "calm",
             difficultyLevel = 1,
             isCompleted = false
         });
