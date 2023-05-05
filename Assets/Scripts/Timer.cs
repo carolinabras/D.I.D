@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    float currentTime;
+    public float currentTime;
     public float startingTime = 10f;
 
     [SerializeField] TextMeshProUGUI countdownText;
     void Start()
     {
         currentTime = startingTime;
+    }
+
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+
+        SceneManager.LoadScene(nextSceneIndex);
+
     }
     void Update()
     {
@@ -22,6 +32,7 @@ public class Timer : MonoBehaviour
         if (currentTime <= 0)
         {
             currentTime = 0;
+            LoadNextScene();
             gameObject.SetActive(false);
         }
     }

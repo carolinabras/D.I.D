@@ -239,6 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6cb871c16e7e084e8d5d2c2221cadbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeft: 0
+  minigameChance: 40
 --- !u!114 &447872415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +406,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24519403, g: 0.31139478, b: 0.3584906, a: 1}
+  m_Color: {r: 0.14901961, g: 0.1254902, b: 0.17254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -442,6 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc797d4b67b92a47b2428bff2d649e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
   startingTime: 10
   countdownText: {fileID: 1358798848}
 --- !u!114 &827083465
@@ -1036,6 +1039,18 @@ PrefabInstance:
       propertyPath: isOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
 --- !u!1 &1242416656
@@ -1578,7 +1593,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24705882, g: 0.3137255, b: 0.36078432, a: 1}
+  m_Color: {r: 0.14901961, g: 0.1254902, b: 0.17254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1634,6 +1649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dc797d4b67b92a47b2428bff2d649e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
   startingTime: 10
   countdownText: {fileID: 948201901}
 --- !u!4 &1745432323 stripped
@@ -1807,6 +1823,18 @@ PrefabInstance:
       propertyPath: isOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
 --- !u!1001 &1889958267
@@ -1868,6 +1896,18 @@ PrefabInstance:
       propertyPath: isOn
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834137743408623903, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ddb1f881dd13d14db1e01475ac9340c, type: 3}
 --- !u!1 &1979809276
@@ -1898,7 +1938,7 @@ Animator:
   m_GameObject: {fileID: 1979809276}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec1efa986333fb644a15760c0ff29fd2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7ded2797efbb92d4c9b52386586f488f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1949,7 +1989,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2319e13f9bfd7d94491a1823e7b2a73f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5aae4e00acaae149b5ab74788fbdf01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
