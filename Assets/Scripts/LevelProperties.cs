@@ -31,6 +31,11 @@ public class LevelProperties : MonoBehaviour
     // Make this game object and all its transform children
     // survive when loading a new scene.
     void Awake() {
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
         DontDestroyOnLoad (this);
     }
 }
